@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# first and second arguments are the sha values third is a flag for the change type
+change_type=$3
+
+LIGHT_BLUE='\033[1;34m'
+NC='\033[0m'
+
+# If the user performs a checkout on a branch run pod install
+
+if [ $change_type -eq 1 ] 
+then
+	echo -e "$LIGHT_BLUE Branch changed - Running pod install $NC"
+	pod install
+fi
